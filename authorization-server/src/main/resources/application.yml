@@ -1,0 +1,7 @@
+logging:
+  level:
+    root: debug
+    org.springframework.scurity: trace
+
+server:
+  port: 9000
