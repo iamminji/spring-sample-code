@@ -17,3 +17,11 @@
 스프링 리액티브 스택의 기본 서버 프레임워크는 Netty이다.
 
 사용하는 어노테이션이 스프링 MVC 와 유사해서 전환이 쉽다.
+
+## Best Practice
+- Don't mix blocking and non-blocking APIs
+- Vertical non-blocking slices
+- Don't put non-blocking code behind synchronous APIs
+- Compose single, deferred, request handling chain
+- Don't use `block()`, `subscribe()`, and the like
+- Let Spring MVC handle it
