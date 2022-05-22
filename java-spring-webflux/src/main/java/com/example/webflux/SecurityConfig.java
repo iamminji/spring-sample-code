@@ -19,23 +19,25 @@ public class SecurityConfig {
     public SecurityWebFilterChain webHttpSecurity(ServerHttpSecurity http) {
         http
                 .authorizeExchange((exchanges) -> exchanges
-                        .pathMatchers("/sample").permitAll()
-                        .anyExchange().authenticated()
+                                .anyExchange().permitAll()
+//                        .pathMatchers("/sample").permitAll()
+//                        .anyExchange().authenticated()
                 )
-                .formLogin()
-                .and()
-                .httpBasic(withDefaults());
+//                .formLogin()
+//                .and()
+//                .httpBasic(withDefaults());
+        ;
         return http.build();
     }
-
-
-    @Bean
-    public MapReactiveUserDetailsService userDetailsService() {
-        UserDetails user = User.withDefaultPasswordEncoder()
-                .username("user")
-                .password("user")
-                .roles("USER")
-                .build();
-        return new MapReactiveUserDetailsService(user);
-    }
+//
+//
+//    @Bean
+//    public MapReactiveUserDetailsService userDetailsService() {
+//        UserDetails user = User.withDefaultPasswordEncoder()
+//                .username("user")
+//                .password("user")
+//                .roles("USER")
+//                .build();
+//        return new MapReactiveUserDetailsService(user);
+//    }
 }

@@ -1,0 +1,8 @@
+logging:
+  level:
+    root: info
+#    com.example.webflux: debug
+
+server:
+  shutdown: graceful
+

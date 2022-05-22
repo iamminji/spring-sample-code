@@ -17,7 +17,7 @@ public class SampleController {
     @GetMapping(
             produces = MediaType.TEXT_EVENT_STREAM_VALUE
     )
-    public Flux<Long> findWeather() {
+    public Flux<Long> eventSample() {
         return Flux.interval(Duration.ofSeconds(3))
                 .take(5);
     }
