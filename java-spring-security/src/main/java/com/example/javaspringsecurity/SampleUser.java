@@ -6,32 +6,36 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-public class SecurityUser implements UserDetails {
+public class SampleUser implements UserDetails {
 
-    private final User user;
+    private final String username;
+    private final String password;
+    private final String authority;
 
-    public SecurityUser(User user) {
-        this.user = user;
+    public SampleUser(String username, String password, String authority) {
+        this.username = username;
+        this.password = password;
+        this.authority = authority;
     }
 
     @Override
     public String getPassword() {
-        return user.getPassword();
+        return password;
     }
 
     @Override
     public String getUsername() {
-        return user.getUsername();
+        return username;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // 권한의 목록을 위한 정의 추가
-        return List.of(() -> "READ");
+        return List.of(() -> authority);
     }
 
     @Override
     public boolean isAccountNonExpired() {
+        // 계정은 만료되거나 잠기지 않는다.
         return true;
     }
 

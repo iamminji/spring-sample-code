@@ -23,7 +23,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         String username = authentication.getName();
         String password = String.valueOf(authentication.getCredentials());
 
-        if ("john".equals(username) && "12345".equals(password)) {
+        if ("john2".equals(username) && "12345".equals(password)) {
             return new UsernamePasswordAuthenticationToken(
                     username, password, List.of()
             );
