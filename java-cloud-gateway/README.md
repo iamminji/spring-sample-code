@@ -3,12 +3,17 @@
 
 
 ### request
-route
+http://httpbin.org/
+
 ```shell
 http :8080/get
 ```
 
+```shell
+http :8080/anything X-Customer-Id:helloWorld
+```
+
 circuitbreaker
 ```shell
-http :8080/delay/3 Host:www.circuitbreaker.com
+http :8080/delay/1 Host:www.circuitbreaker.com
 ```
